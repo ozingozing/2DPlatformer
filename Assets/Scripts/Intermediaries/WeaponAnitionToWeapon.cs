@@ -7,6 +7,7 @@ public class WeaponAnitionToWeapon : MonoBehaviour
 {
 	private Weapon weapon;
 
+
 	private void Start()
 	{
 		//AnimationToStatemachine에선 AttackState에서 별도로 초기화를 해줘서 안 썼지만

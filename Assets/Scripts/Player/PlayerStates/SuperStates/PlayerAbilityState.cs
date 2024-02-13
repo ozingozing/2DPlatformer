@@ -53,4 +53,10 @@ public class PlayerAbilityState : PlayerState
 	{
 		base.PhysicsUpdate();
 	}
+
+
+	public override void AnimationFinishTrigger()
+	{
+		base.AnimationFinishTrigger();
+	}
 }

@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
 	public PlayerCrouchMoveState CrouchMoveState { get; private set; }
 	public PlayerAttackState PrimaryAttackState { get; private set; }
 	public PlayerAttackState SecondaryAttackState { get; private set; }
-
 	[SerializeField]
 	private PlayerData playerData;
 	#endregion
@@ -33,6 +32,7 @@ public class Player : MonoBehaviour
 	public PlayerInputHandler InputHandler { get; private set; }
 	public Rigidbody2D RB { get; private set; }
 	public Transform DashDirectionIndicator { get; private set; }
+	public Transform Weapon {  get; private set; }
 	public BoxCollider2D MovementCollider { get; private set; }
 	public PlayerInventory Inventory { get; private set; }
 
@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
 	{
 		StateMachine = new PlayerStateMachine();
 
+
 		IdleState = new PlayerIdleState(this, StateMachine, playerData, "idle");
 		MoveState = new PlayerMoveState(this, StateMachine, playerData, "move");
 		JumpState = new PlayerJumpState(this, StateMachine, playerData, "inAir");
@@ -85,6 +86,8 @@ public class Player : MonoBehaviour
 		InputHandler = GetComponent<PlayerInputHandler>();
 		RB = GetComponent<Rigidbody2D>();
 		DashDirectionIndicator = transform.GetChild(3);
+		Weapon = transform.GetChild(5);
+		Weapon.gameObject.SetActive(true);
 		MovementCollider = GetComponent<BoxCollider2D>();
 		Inventory = GetComponent<PlayerInventory>();
 
@@ -227,14 +230,13 @@ public class Player : MonoBehaviour
 
 
 	private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
-
+	private void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
 	private void LedgeClimb_0() => StateMachine.CurrentState.LedgeClimb_0();
 	private void LedgeClimb_1() => StateMachine.CurrentState.LedgeClimb_1();
 	private void LedgeClimb_2() => StateMachine.CurrentState.LedgeClimb_2();
 	private void LedgeHold() => StateMachine.CurrentState.LedgeHold();
 	private void LedgeGrab_0() => StateMachine.CurrentState.LedgeGrab_0();
 	private void LedgeGrab_1() => StateMachine.CurrentState.LedgeGrab_1();
-	private void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
 
 	private void Flip()
 	{

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-	protected Animator baseAnimator;
-	protected Animator weaponAnimator;
+	private Animator baseAnimator;
+	private Animator weaponAnimator;
 
     protected PlayerAttackState state;
 
-    protected virtual void Start()
+	protected virtual void Start()
     {
         baseAnimator = transform.Find("Base").GetComponent<Animator>();
         weaponAnimator = transform.Find("Weapon").GetComponent<Animator>();
