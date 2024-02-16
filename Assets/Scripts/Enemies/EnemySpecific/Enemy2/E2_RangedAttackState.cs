@@ -42,6 +42,10 @@ public class E2_RangedAttackState : RangedAttackState
 			{
 				stateMachine.ChangeState(enemy.playerDetectedState);
 			}
+			else if(isPlayerInMaxAgroRange)
+			{
+				stateMachine.ChangeState(enemy.moveState);
+			}
 			else
 			{
 				stateMachine.ChangeState(enemy.lookForPlayerState);

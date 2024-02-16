@@ -8,6 +8,7 @@ public class AttackState : State
 
 	protected bool isAnimationFinished;
 	protected bool isPlayerInMinAgroRange;
+	protected bool isPlayerInMaxAgroRange;
 
 	public AttackState(Entity entity, FiniteStateMachine sateMachine, string animBoolName, Transform attackPosition) : base(entity, sateMachine, animBoolName)
 	{
@@ -19,6 +20,7 @@ public class AttackState : State
 		base.DoChecks();
 
 		isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
+		isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
 	}
 
 	public override void Enter()
@@ -27,7 +29,7 @@ public class AttackState : State
 
 		entity.atsm.attackState = this;
 		isAnimationFinished = false;
-		entity.SetVelocity(0);
+		core.Movement.SetVelocityX(0);
 	}
 
 	public override void Exit()
