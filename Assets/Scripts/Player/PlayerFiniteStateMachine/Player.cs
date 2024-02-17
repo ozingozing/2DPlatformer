@@ -2,10 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
+	protected Movement Movement
+	{ get => movement ?? Core.GetCoreComponent(ref movement); }
+	private Movement movement;
+
+	private CollisionSenses CollisionSenses
+	{ get => collisionSenses ?? Core.GetCoreComponent(ref collisionSenses); }
+	private CollisionSenses collisionSenses;
+
+
 	#region State Variables
 	public PlayerStateMachine StateMachine { get; private set; }
 	public PlayerIdleState IdleState { get; private set; }
@@ -75,7 +85,7 @@ public class Player : MonoBehaviour
 	{
 		Anim = GetComponent<Animator>();
 		InputHandler = GetComponent<PlayerInputHandler>();
-		RB = GetComponent<Rigidbody2D>();
+		//RB = GetComponent<Rigidbody2D>();
 		DashDirectionIndicator = transform.GetChild(1);
 		Weapon = transform.GetChild(2);
 		Weapon.gameObject.SetActive(true);
@@ -116,8 +126,8 @@ public class Player : MonoBehaviour
 		
 		MovementCollider.size = workspace;
 		MovementCollider.offset = center;
-		Debug.Log("size :" + MovementCollider.size.y);
-		Debug.Log("offset :" + MovementCollider.offset.y);
+		//Debug.Log("size :" + MovementCollider.size.y);
+		//Debug.Log("offset :" + MovementCollider.offset.y);
 	}
 
 	
@@ -140,10 +150,10 @@ public class Player : MonoBehaviour
 		if(Core != null)
 		{
 			Gizmos.color = Color.red;
-			Gizmos.DrawLine(Core.CollisionSenses.LedgeCheckHorizontal.position,
-				Core.CollisionSenses.LedgeCheckHorizontal.position + Core.Movement.FacingDirection * new Vector3(1, 0, 0));
-			Gizmos.DrawLine(Core.CollisionSenses.WallCheck.position,
-				Core.CollisionSenses.WallCheck.position + Core.Movement.FacingDirection * new Vector3(1, 0, 0));
+			Gizmos.DrawLine(CollisionSenses.LedgeCheckHorizontal.position,
+				CollisionSenses.LedgeCheckHorizontal.position + Movement.FacingDirection * new Vector3(1, 0, 0));
+			Gizmos.DrawLine(CollisionSenses.WallCheck.position,
+				CollisionSenses.WallCheck.position + Movement.FacingDirection * new Vector3(1, 0, 0));
 
 		}
 	}

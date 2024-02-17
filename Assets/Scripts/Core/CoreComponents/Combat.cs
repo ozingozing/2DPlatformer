@@ -4,10 +4,26 @@ using UnityEngine;
 
 public class Combat : CoreComponent, IDamageable, IKnockbackable
 {
+	protected Movement Movement
+	{ get => movement ?? core.GetCoreComponent(ref movement); }
+	private Movement movement;
+
+	private CollisionSenses CollisionSenses
+	{ get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+	private CollisionSenses collisionSenses;
+	
+	private Stats Stats
+	{ get => stats ?? core.GetCoreComponent(ref stats); }
+	private Stats stats;
+
+	[SerializeField] private float maxKnockbackTime = 0.2f;
+
 	private bool isKnockbackActive;
 	private float knockbackStartTime;
 
-	public void LogicUpdate()
+	
+
+	public override void LogicUpdate()
 	{
 		CheckKnockback();
 	}
@@ -15,12 +31,13 @@ public class Combat : CoreComponent, IDamageable, IKnockbackable
 	public void Damage(float amount)
 	{
 		Debug.Log(core.transform.parent.name + " Damaged!");
+		Stats?.DecreaseHealth(amount);
 	}
 
 	public void Knockback(Vector2 angle, float strength, int direction)
 	{
-		core.Movement.SetVelocity(strength, angle, direction);
-		core.Movement.canSetVelocity = false;
+		Movement?.SetVelocity(strength, angle, direction);
+		Movement.canSetVelocity = false;
 		isKnockbackActive = true;
 		knockbackStartTime = Time.time;
 	}
@@ -28,11 +45,17 @@ public class Combat : CoreComponent, IDamageable, IKnockbackable
 	private void CheckKnockback()
 	{
 		if(isKnockbackActive
-			&& core.Movement.CurrentVelocity.y <= 0.01f
-			&& core.CollisionSenses.Ground)
+			&& (Movement?.CurrentVelocity.y <= 0.01f
+			&& CollisionSenses.Ground)
+			|| Time.time >= knockbackStartTime + maxKnockbackTime)
 		{
 			isKnockbackActive = false;
-			core.Movement.canSetVelocity = true;
+			Movement.canSetVelocity = true;
 		}
+	}
+
+	protected override void Awake()
+	{
+		base.Awake();
 	}
 }

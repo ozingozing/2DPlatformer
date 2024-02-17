@@ -24,7 +24,7 @@ public class E2_DodgeState : DodgeState
 	public override void Exit()
 	{
 		base.Exit();
-		core.Movement.SetVelocityZero();
+		Movement?.SetVelocityZero();
 	}
 
 	public override void LogicUpdate()

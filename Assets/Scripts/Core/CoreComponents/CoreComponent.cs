@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoreComponent : MonoBehaviour
+public class CoreComponent : MonoBehaviour, ILogicUpdate
 {
     protected Core core;
 
@@ -10,10 +10,13 @@ public class CoreComponent : MonoBehaviour
 	protected virtual void Awake()
 	{
 		core = transform.parent.GetComponent<Core>();
-		Debug.Log(this.gameObject.transform.parent.name);
-		if(core ==  null )
+		//Debug.Log(this.gameObject.transform.parent.name);
+		if(core == null )
 		{
 			Debug.LogError("There is no Core on the parent");
 		}
+		core.AddComponent(this);
 	}
+
+	public virtual void LogicUpdate() {	}
 }

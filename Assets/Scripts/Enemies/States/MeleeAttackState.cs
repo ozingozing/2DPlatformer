@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class MeleeAttackState : AttackState
 {
-    protected D_MeleeAttack stateData;
+	protected Movement Movement
+	{ get => movement ?? core.GetCoreComponent(ref movement); }
+	private Movement movement;
+
+	private CollisionSenses CollisionSenses
+	{ get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+	private CollisionSenses collisionSenses;
+
+
+	protected D_MeleeAttack stateData;
 
 
 	public MeleeAttackState(Entity entity, FiniteStateMachine sateMachine, string animBoolName, Transform attackPosition, D_MeleeAttack stateData) : base(entity, sateMachine, animBoolName, attackPosition)
@@ -62,7 +71,7 @@ public class MeleeAttackState : AttackState
 			if(knockbackable != null)
 			{
 				knockbackable.Knockback(stateData.knockbackAngle, stateData.knockbackStrength,
-										core.Movement.FacingDirection);
+										Movement.FacingDirection);
 			}
 		}
 	}

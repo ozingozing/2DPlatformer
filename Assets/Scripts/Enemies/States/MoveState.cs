@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class MoveState : State
 {
+	protected Movement Movement
+	{ get => movement ?? core.GetCoreComponent(ref movement); }
+	private Movement movement;
+
+	private CollisionSenses CollisionSenses
+	{ get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+	private CollisionSenses collisionSenses;
+
+
 	protected D_MoveState stateData;
 
 	protected bool isDetectingWall;
@@ -21,8 +30,11 @@ public class MoveState : State
 	public override void DoChecks()
 	{
 		base.DoChecks();
-		isDetectingLedge = core.CollisionSenses.LedgeVertical;
-		isDetectingWall = core.CollisionSenses.WallFront;
+		if(CollisionSenses)
+		{
+			isDetectingLedge = CollisionSenses.LedgeVertical;
+			isDetectingWall = CollisionSenses.WallFront;
+		}
 		isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
 		isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
 	}
@@ -31,7 +43,7 @@ public class MoveState : State
 	{
 		base.Enter(); //부모클래스의 Enter함수 실행
 					  //속력 설정
-		core.Movement.SetVelocityX(stateData.movementSpeed * core.Movement.FacingDirection);
+		Movement?.SetVelocityX(stateData.movementSpeed * Movement.FacingDirection);
 
 	}
 
@@ -42,7 +54,7 @@ public class MoveState : State
 
 	public override void LogicUpdate()
 	{
-		core.Movement.SetVelocityX(stateData.movementSpeed * core.Movement.FacingDirection);
+		Movement?.SetVelocityX(stateData.movementSpeed * Movement.FacingDirection);
 		base.LogicUpdate();
 	}
 

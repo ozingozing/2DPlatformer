@@ -39,7 +39,7 @@ public class E2_MeleeAttackState : MeleeAttackState
 		{
 			if(isPlayerInMinAgroRange)
 			{
-				stateMachine.ChangeState(enemy.playerDetectedState);
+				stateMachine.ChangeState(enemy.dodgeState);
 			}
 			else if(!isPlayerInMinAgroRange)
 			{
