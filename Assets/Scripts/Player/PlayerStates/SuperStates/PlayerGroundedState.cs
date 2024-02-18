@@ -19,7 +19,7 @@ public class PlayerGroundedState : PlayerState
 		{ get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
 	private CollisionSenses collisionSenses;
 
-	private bool JumpInput;
+	private bool jumpInput;
 	private bool grabInput;
 	private bool isGrounded;
 	private bool isTouchingWall;
@@ -62,7 +62,7 @@ public class PlayerGroundedState : PlayerState
 
 		xInput = player.InputHandler.NormalInputX;
 		yInput = player.InputHandler.NormalInputY;
-		JumpInput = player.InputHandler.JumpInput;
+		jumpInput = player.InputHandler.JumpInput;
 		grabInput = player.InputHandler.GrabInput;
 		dashInput = player.InputHandler.DashInput;
 
@@ -74,7 +74,7 @@ public class PlayerGroundedState : PlayerState
 		{
 			stateMachine.ChangeState(player.SecondaryAttackState);
 		}
-		else if(JumpInput && player.JumpState.CanJump())
+		else if(jumpInput && player.JumpState.CanJump() && !isTouchingCeiling)
 		{
 			stateMachine.ChangeState(player.JumpState);
 		}

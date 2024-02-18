@@ -8,9 +8,7 @@ public class LookForPlayerState : State
 	{ get => movement ?? core.GetCoreComponent(ref movement); }
 	private Movement movement;
 
-	private CollisionSenses CollisionSenses
-	{ get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
-	private CollisionSenses collisionSenses;
+	
 
 	protected D_LookForPlayer stateData;
 
