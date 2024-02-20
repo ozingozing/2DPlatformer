@@ -1,0 +1,71 @@
+[33mcommit b10b5830f57e1cc558b970c0b0c68f36ffde4769[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ozingozing <hoon4367@gmail.com>
+Date:   Tue Feb 20 03:05:23 2024 +0900
+
+    [ADD]Link WeaponBase and Weapon and PlayerAttackState
+
+[33mcommit 6bafcb9d96eb17f5bec2a34fda7938d5a10e420e[m
+Author: ozingozing <hoon4367@gmail.com>
+Date:   Mon Feb 19 02:03:36 2024 +0900
+
+    [DEL]Weapon System
+
+[33mcommit f71875f02da2255c47e62b724270ba87bdea7bac[m
+Author: ozingozing <hoon4367@gmail.com>
+Date:   Sun Feb 18 11:38:25 2024 +0900
+
+    [ADD]DeathComponent,[FIX]Core func
+
+[33mcommit ba1e5e092d737d041eac4cc0de18da9b885b2570[m
+Author: ozingozing <hoon4367@gmail.com>
+Date:   Sat Feb 17 18:25:47 2024 +0900
+
+    [FIX] refactoring CoreSystem
+
+[33mcommit eeab8dda4b3d1e79362dcd55da10ddcfff188975[m
+Author: ozingozing <hoon4367@gmail.com>
+Date:   Sat Feb 17 01:56:03 2024 +0900
+
+    [ADD]Enemy Core
+
+[33mcommit 859d1742fa30981a42d62ead872f6cabaf714e7f[m
+Author: ozingozing <hoon4367@gmail.com>
+Date:   Wed Feb 14 07:00:48 2024 +0900
+
+    [ADD] AttackCombo [FIX] AttackAnimation Event
+
+[33mcommit a3868a15b36aaf770437561795dd183e84c01e88[m
+Author: ozingozing <hoon4367@gmail.com>
+Date:   Tue Feb 13 09:14:29 2024 +0900
+
+    [FIX] AnimationEvent
+
+[33mcommit b5d55261ece9d09749f911c77bcedffcea40b7e6[m
+Author: ozingozing <hoon4367@gmail.com>
+Date:   Mon Feb 12 03:43:16 2024 +0900
+
+    [ADD]newInput, animtion, weapon
+
+[33mcommit 7677b33ad15257d3324443dc0915f520b8910f93[m
+Author: ozingozing <hoon4367@gmail.com>
+Date:   Sun Dec 31 06:02:36 2023 +0900
+
+    [ADD] enemy1, enemy2
+
+[33mcommit 6e1a318ad6a2d05693d57832c61bba89fe381546[m
+Author: ozingozing <hoon4367@gmail.com>
+Date:   Sun Nov 19 00:56:28 2023 +0900
+
+    [ADD] Player Movement
+
+[33mcommit 548b7485137babc1905f031de8e0b5237416b399[m
+Author: ozingozing <hoon4367@gmail.com>
+Date:   Thu Nov 16 08:47:45 2023 +0900
+
+    [ADD]Start Make Project
+
+[33mcommit fbb7a1b7671a9a1186c6a0e4dcb21f05c4238e52[m
+Author: ozingozing <69864892+ozingozing@users.noreply.github.com>
+Date:   Thu Nov 16 08:42:39 2023 +0900
+
+    Initial commit
