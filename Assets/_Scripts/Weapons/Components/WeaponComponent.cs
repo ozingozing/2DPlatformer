@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Ozing.Assets._Scripts.Weapons.Components
+namespace Ozing.Weapons.Components
 {
 	public abstract class WeaponComponent : MonoBehaviour
 	{

@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Ozing.Assets._Scripts.Weapons
+namespace Ozing.Weapons
 {
 	public class AnimationEventHandler : MonoBehaviour
 	{

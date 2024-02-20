@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Ozing.Assets._Scripts._ChocoOzing.Utilities
+namespace Ozing.Utilities
 {
 	public class Timer : MonoBehaviour
 	{
