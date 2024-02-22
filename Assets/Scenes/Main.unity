@@ -1368,6 +1368,11 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!1 &414769416 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1875812954380895701, guid: d6c025d3e081855498dbe0e84b7826a5, type: 3}
+  m_PrefabInstance: {fileID: 2150504885461091421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &440726180
 GameObject:
   m_ObjectHideFlags: 0
@@ -3114,6 +3119,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SecondaryWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 1875812954380895701, guid: d6c025d3e081855498dbe0e84b7826a5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5792271843837995518, guid: d6c025d3e081855498dbe0e84b7826a5, type: 3}
       propertyPath: weaponSprites.Array.size
       value: 3
@@ -3245,7 +3254,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1875812954380895701, guid: d6c025d3e081855498dbe0e84b7826a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1401318826}
   m_SourcePrefab: {fileID: 100100000, guid: d6c025d3e081855498dbe0e84b7826a5, type: 3}
 --- !u!4 &1241489858 stripped
 Transform:
@@ -3725,6 +3737,23 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!1 &1401318823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1875812954380895701, guid: d6c025d3e081855498dbe0e84b7826a5, type: 3}
+  m_PrefabInstance: {fileID: 1241489857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1401318826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401318823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ec40cab1655e2468ac56d2f04067f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1592591697
 GameObject:
   m_ObjectHideFlags: 0
@@ -69115,6 +69144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrimaryWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 1875812954380895701, guid: d6c025d3e081855498dbe0e84b7826a5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5792271843837995518, guid: d6c025d3e081855498dbe0e84b7826a5, type: 3}
       propertyPath: weaponSprites.Array.size
       value: 3
@@ -69318,13 +69351,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1875812954380895701, guid: d6c025d3e081855498dbe0e84b7826a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2150504885461091425}
   m_SourcePrefab: {fileID: 100100000, guid: d6c025d3e081855498dbe0e84b7826a5, type: 3}
 --- !u!4 &2150504885461091422 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6264940322739480808, guid: d6c025d3e081855498dbe0e84b7826a5, type: 3}
   m_PrefabInstance: {fileID: 2150504885461091421}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2150504885461091425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414769416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ec40cab1655e2468ac56d2f04067f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5683846476397820850
 GameObject:
   m_ObjectHideFlags: 0

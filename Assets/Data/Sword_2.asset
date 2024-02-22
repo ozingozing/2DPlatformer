@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Sword_2
   m_EditorClassIdentifier: 
   <NumberOfAttacks>k__BackingField: 3
-  componentData:
+  ComponentData:
   - rid: 2681878658672492545
+  - rid: 2681878697673490433
   references:
     version: 2
     RefIds:
@@ -40,3 +41,13 @@ MonoBehaviour:
           - {fileID: 1483116185, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
           - {fileID: 863373800, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
           - {fileID: 1911823964, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
+    - rid: 2681878697673490433
+      type: {class: MovementData, ns: Ozing.Weapons.Components.ComponentData, asm: Assembly-CSharp}
+      data:
+        <AttackData>k__BackingField:
+        - <Directon>k__BackingField: {x: 1, y: 0}
+          <Velocity>k__BackingField: 3
+        - <Directon>k__BackingField: {x: 1, y: 0}
+          <Velocity>k__BackingField: 4
+        - <Directon>k__BackingField: {x: 1, y: 5}
+          <Velocity>k__BackingField: 10

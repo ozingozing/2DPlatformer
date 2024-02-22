@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using Ozing.Utilities;
+using Ozing.CoreSystem;
 
 namespace Ozing.Weapons
 {
@@ -23,8 +24,8 @@ namespace Ozing.Weapons
 		private Animator anim;
 		public GameObject BaseGO { get; private set; }
 		public GameObject WeaponSpriteGO { get; private set; }
-
-		private AnimationEventHandler eventHandler;
+		public Core Core { get; private set; }
+		public AnimationEventHandler EventHandler { get; private set; }
 
 		private Timer attackCounterResetTimer;
 
@@ -38,6 +39,11 @@ namespace Ozing.Weapons
 			anim.SetInteger("counter", CurrentAttackCounter);
 
 			OnEnter?.Invoke();
+		}
+
+		public void SetCore(Core core)
+		{
+			Core = core;
 		}
 
 		private void Exit()
@@ -62,7 +68,7 @@ namespace Ozing.Weapons
 			WeaponSpriteGO = transform.Find("WeaponSprite").gameObject;
 			anim = BaseGO.GetComponent<Animator>();
 
-			eventHandler = BaseGO.GetComponent<AnimationEventHandler>();
+			EventHandler = BaseGO.GetComponent<AnimationEventHandler>();
 
 			attackCounterResetTimer = new Timer(attackCounterResetCooldown);
 		}
@@ -71,13 +77,13 @@ namespace Ozing.Weapons
 
 		private void OnEnable()
 		{
-			eventHandler.OnFinish += Exit;
+			EventHandler.OnFinish += Exit;
 			attackCounterResetTimer.OnTimerDone += ResetAttackCounter;
 		}
 
 		private void OnDisable()
 		{
-			eventHandler.OnFinish -= Exit;
+			EventHandler.OnFinish -= Exit;
 			attackCounterResetTimer.OnTimerDone -= ResetAttackCounter;
 		}
 	}

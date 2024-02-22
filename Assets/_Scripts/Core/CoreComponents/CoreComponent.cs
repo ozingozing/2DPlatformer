@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoreComponent : MonoBehaviour, ILogicUpdate
+namespace Ozing.CoreSystem
 {
-    protected Core core;
-
-
-	protected virtual void Awake()
+	public class CoreComponent : MonoBehaviour, ILogicUpdate
 	{
-		core = transform.parent.GetComponent<Core>();
-		//Debug.Log(this.gameObject.transform.parent.name);
-		if(core == null )
-		{
-			Debug.LogError("There is no Core on the parent");
-		}
-		core.AddComponent(this);
-	}
+		protected Core core;
 
-	public virtual void LogicUpdate() {	}
+
+		protected virtual void Awake()
+		{
+			core = transform.parent.GetComponent<Core>();
+			//Debug.Log(this.gameObject.transform.parent.name);
+			if (core == null)
+			{
+				Debug.LogError("There is no Core on the parent");
+			}
+			core.AddComponent(this);
+		}
+
+		public virtual void LogicUpdate() { }
+	}
 }

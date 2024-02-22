@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Ozing.CoreSystem;
+using System.Collections;
 using UnityEngine;
 
 namespace Ozing.Weapons.Components
@@ -7,11 +8,15 @@ namespace Ozing.Weapons.Components
 	{
 		protected Weapon weapon;
 
+		protected AnimationEventHandler EventHandler;// => weapon.EventHandler;
+		protected Core Core => weapon.Core;
+
 		protected bool isAttackActive;
 
 		protected virtual void Awake()
 		{
 			weapon = GetComponent<Weapon>();
+			EventHandler = GetComponentInChildren<AnimationEventHandler>();
 		}
 
 		protected virtual void HandleEnter()

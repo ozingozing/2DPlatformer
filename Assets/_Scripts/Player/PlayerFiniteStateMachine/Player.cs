@@ -1,3 +1,4 @@
+using Ozing.CoreSystem;
 using Ozing.Weapons;
 using System.Collections;
 using System.Collections.Generic;
@@ -65,7 +66,12 @@ public class Player : MonoBehaviour
 		Core = GetComponentInChildren<Core>();
 
 		primaryWeapon = transform.Find("PrimaryWeapon").GetComponent<Weapon>();
-		secondaryWeapon = transform.Find("SecondaryWeapon").GetComponent<Weapon>();	
+		primaryWeapon.gameObject.SetActive(false);
+		secondaryWeapon = transform.Find("SecondaryWeapon").GetComponent<Weapon>();
+		secondaryWeapon.gameObject.SetActive(false);
+
+		primaryWeapon.SetCore(Core);
+		secondaryWeapon.SetCore(Core);
 
 		StateMachine = new PlayerStateMachine();
 
