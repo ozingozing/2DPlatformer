@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Ozing.Utilities
 {
-	public class Timer : MonoBehaviour
+	public class Timer
 	{
 		public event Action OnTimerDone;
 
@@ -36,6 +36,7 @@ namespace Ozing.Utilities
 			if (!isActive) return;
             if (Time.time >= targetTime)
 			{
+				Debug.Log("AttackCount Reset!!");
 				OnTimerDone?.Invoke();
 				StopTimer();
 			}

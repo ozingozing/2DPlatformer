@@ -22,7 +22,6 @@ public class PlayerAttackState : PlayerAbilityState
 	public override void Enter()
 	{
 		base.Enter();
-		weapon.gameObject.SetActive(true);
 		weapon.Enter();
 		
 	}
@@ -30,7 +29,6 @@ public class PlayerAttackState : PlayerAbilityState
 	private void ExitHandler()
 	{
 		base.AnimationFinishTrigger();
-		weapon.gameObject.SetActive(false);
 		isAbilityDone = true;
 	}
 }

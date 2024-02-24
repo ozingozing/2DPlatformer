@@ -1,11 +1,12 @@
 ﻿using Ozing.Weapons.Components.ComponentData;
+using Ozing.Weapons.Components.ComponentData.AttackData;
 using System;
 using System.Collections;
 using UnityEngine;
 
 namespace Ozing.Weapons.Components
 {
-	public class WeaponSprite : WeaponComponent
+	public class WeaponSprite : WeaponComponent<WeaponSpriteData, AttackSprites>
 	{
 		private SpriteRenderer baseSpriteRender;
 		private SpriteRenderer weaponSpriteRender;
@@ -13,7 +14,6 @@ namespace Ozing.Weapons.Components
 
 		private int currentWeaponSpriteIndex;
 
-		private WeaponSpriteData data;
 
 		protected override void HandleEnter()
 		{
@@ -28,9 +28,9 @@ namespace Ozing.Weapons.Components
 				weaponSpriteRender.sprite = null;
 				return;
 			}
-			if(currentWeaponSpriteIndex < data.AttackData[weapon.CurrentAttackCounter].Sprites.Length)
+			if(currentWeaponSpriteIndex < currentAttackData.Sprites.Length)
 			{
-				weaponSpriteRender.sprite = data.AttackData[weapon.CurrentAttackCounter].Sprites[currentWeaponSpriteIndex];
+				weaponSpriteRender.sprite = currentAttackData.Sprites[currentWeaponSpriteIndex];
 
 				currentWeaponSpriteIndex++;
 			}
@@ -48,7 +48,6 @@ namespace Ozing.Weapons.Components
 			baseSpriteRender = transform.Find("Base").GetComponent<SpriteRenderer>();
 			weaponSpriteRender = transform.Find("WeaponSprite").GetComponent<SpriteRenderer>();
 
-			data = weapon.Data.GetData<WeaponSpriteData>();
 
 			// TODO: Fix this when we create weapon data
 			//baseSpriteRender = weapon.BaseGO.GetComponent<SpriteRenderer>();
