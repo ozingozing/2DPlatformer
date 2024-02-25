@@ -12,8 +12,7 @@ namespace Ozing.Weapons
         [field : SerializeField] public int NumberOfAttacks { get; private set; }
 
         [field : SerializeReference] public List<ComponentData> ComponentData = new List<ComponentData>();
-
-        public T GetData<T>()
+		public T GetData<T>()
         {
             return ComponentData.OfType<T>().FirstOrDefault();
         }

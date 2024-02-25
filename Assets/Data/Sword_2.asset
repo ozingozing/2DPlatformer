@@ -23,20 +23,24 @@ MonoBehaviour:
     - rid: 2681878726952091691
       type: {class: WeaponSpriteData, ns: Ozing.Weapons.Components.ComponentData, asm: Assembly-CSharp}
       data:
-        <AttackData>k__BackingField:
-        - <Sprites>k__BackingField:
+        name: WeaponSpriteData
+        attackData:
+        - name: Attack 1
+          <Sprites>k__BackingField:
           - {fileID: 1795769618, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
           - {fileID: 1172911568, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
           - {fileID: -578374592, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
           - {fileID: 1127953672, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
           - {fileID: -1431516442, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
-        - <Sprites>k__BackingField:
+        - name: Attack 2
+          <Sprites>k__BackingField:
           - {fileID: -2064552952, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
           - {fileID: 1158298752, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
           - {fileID: -1441903197, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
           - {fileID: 992030845, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
           - {fileID: -976961570, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
-        - <Sprites>k__BackingField:
+        - name: Attack 3
+          <Sprites>k__BackingField:
           - {fileID: -1792654986, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
           - {fileID: 1905844636, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
           - {fileID: 1483116185, guid: 66445c6f959e8e84890bb84d103c7dc6, type: 3}
@@ -45,38 +49,46 @@ MonoBehaviour:
     - rid: 2681878726952091692
       type: {class: MovementData, ns: Ozing.Weapons.Components.ComponentData, asm: Assembly-CSharp}
       data:
-        <AttackData>k__BackingField:
-        - <Directon>k__BackingField: {x: 1, y: 0}
+        name: MovementData
+        attackData:
+        - name: Attack 1
+          <Directon>k__BackingField: {x: 1, y: 0}
           <Velocity>k__BackingField: 5
-        - <Directon>k__BackingField: {x: 1, y: 0}
+        - name: Attack 2
+          <Directon>k__BackingField: {x: 1, y: 0}
           <Velocity>k__BackingField: 5
-        - <Directon>k__BackingField: {x: 1, y: 5}
+        - name: Attack 3
+          <Directon>k__BackingField: {x: 1, y: 5}
           <Velocity>k__BackingField: 10
     - rid: 2681878755329441803
       type: {class: ActionHitBoxData, ns: Ozing.Weapons.Components.ComponentData, asm: Assembly-CSharp}
       data:
-        <AttackData>k__BackingField:
-        - Debug: 0
+        name: ActionHitBoxData
+        attackData:
+        - name: Attack 1
+          Debug: 0
           <HitBox>k__BackingField:
             serializedVersion: 2
             x: 0
             y: -0.96
             width: 2
             height: 1.71
-        - Debug: 0
+        - name: Attack 2
+          Debug: 0
           <HitBox>k__BackingField:
             serializedVersion: 2
             x: 0
             y: -0.96
             width: 2
             height: 1.71
-        - Debug: 1
+        - name: Attack 3
+          Debug: 0
           <HitBox>k__BackingField:
             serializedVersion: 2
             x: 0
             y: -0.96
             width: 2
-            height: 2.31
+            height: 1.71
         <DetectableLayers>k__BackingField:
           serializedVersion: 2
           m_Bits: 256
