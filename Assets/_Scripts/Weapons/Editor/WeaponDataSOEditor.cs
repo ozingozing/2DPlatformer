@@ -32,7 +32,11 @@ namespace Ozing.Weapons
                 {
                     var comp = Activator.CreateInstance(dataCompType) as ComponentData;
 
-                    if (comp == null) return;
+                    if (comp == null)
+                    {
+                        Debug.LogWarning("¾¾¹áŽc³ª·ç¤Á¸Å´©·ª¤À¤±´©·¡¹«·¥³Ä¤Ì·¡¤ÁÁÖ·ª¤À¤±´©·¡¤Á¤¸·ç¤À");
+                        return;
+                    }
 
                     dataSO.AddData(comp);
                 }

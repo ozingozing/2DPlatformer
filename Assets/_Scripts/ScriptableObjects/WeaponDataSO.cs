@@ -20,7 +20,10 @@ namespace Ozing.Weapons
 
         public void AddData(ComponentData data)
         {
-            if (ComponentData.FirstOrDefault(t => t.GetType() == data.GetType()) != null) return;
+            if (ComponentData.FirstOrDefault(t => t.GetType() == data.GetType()) != null)
+            {
+                return;
+            }
 
 			ComponentData.Add(data);
         }

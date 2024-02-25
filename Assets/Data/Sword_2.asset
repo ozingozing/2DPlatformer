@@ -16,6 +16,7 @@ MonoBehaviour:
   ComponentData:
   - rid: 2681878726952091691
   - rid: 2681878726952091692
+  - rid: 2681878755329441803
   references:
     version: 2
     RefIds:
@@ -51,3 +52,31 @@ MonoBehaviour:
           <Velocity>k__BackingField: 5
         - <Directon>k__BackingField: {x: 1, y: 5}
           <Velocity>k__BackingField: 10
+    - rid: 2681878755329441803
+      type: {class: ActionHitBoxData, ns: Ozing.Weapons.Components.ComponentData, asm: Assembly-CSharp}
+      data:
+        <AttackData>k__BackingField:
+        - Debug: 0
+          <HitBox>k__BackingField:
+            serializedVersion: 2
+            x: 0
+            y: -0.96
+            width: 2
+            height: 1.71
+        - Debug: 0
+          <HitBox>k__BackingField:
+            serializedVersion: 2
+            x: 0
+            y: -0.96
+            width: 2
+            height: 1.71
+        - Debug: 1
+          <HitBox>k__BackingField:
+            serializedVersion: 2
+            x: 0
+            y: -0.96
+            width: 2
+            height: 2.31
+        <DetectableLayers>k__BackingField:
+          serializedVersion: 2
+          m_Bits: 256
