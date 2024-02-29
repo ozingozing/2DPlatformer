@@ -17,6 +17,7 @@ MonoBehaviour:
   - rid: 2681878726952091691
   - rid: 2681878726952091692
   - rid: 2681878755329441802
+  - rid: 2681878857550135296
   references:
     version: 2
     RefIds:
@@ -92,3 +93,14 @@ MonoBehaviour:
         <DetectableLayers>k__BackingField:
           serializedVersion: 2
           m_Bits: 256
+    - rid: 2681878857550135296
+      type: {class: DamageData, ns: Ozing.Weapons.Components.ComponentData, asm: Assembly-CSharp}
+      data:
+        name: DamageData
+        attackData:
+        - name: Attack 1
+          <Amount>k__BackingField: 5
+        - name: Attack 2
+          <Amount>k__BackingField: 10
+        - name: Attack 3
+          <Amount>k__BackingField: 15

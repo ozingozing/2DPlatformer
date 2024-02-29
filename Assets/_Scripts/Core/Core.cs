@@ -9,7 +9,7 @@ namespace Ozing.CoreSystem
 	{
 		private Movement movement;
 		private CollisionSenses collisionSenses;
-		private Combat combat;
+		private KnockBackReceiver combat;
 		private Stats stats;
 
 		private readonly List<CoreComponent> CoreComponents = new List<CoreComponent>();
