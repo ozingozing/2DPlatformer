@@ -7,5 +7,9 @@ namespace Ozing.Weapons.Components.ComponentData
 {
 	public class WeaponSpriteData : ComponentData<AttackSprites>
 	{
+		public WeaponSpriteData()
+		{
+			ComponentDependency = typeof(WeaponSprite);
+		}
 	}
 }

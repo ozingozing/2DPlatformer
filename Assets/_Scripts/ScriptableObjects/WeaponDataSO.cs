@@ -1,4 +1,5 @@
 using Ozing.Weapons.Components.ComponentData;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,11 @@ namespace Ozing.Weapons
 		public T GetData<T>()
         {
             return ComponentData.OfType<T>().FirstOrDefault();
+        }
+
+        public List<Type> GetAllDenedencies()
+        {
+            return ComponentData.Select(component => component.ComponentDependency).ToList();
         }
 
         public void AddData(ComponentData data)

@@ -22,23 +22,18 @@ namespace Ozing.Weapons.Components
             }
         }
 
-		protected override void Awake()
+		protected override void Start()
 		{
-			base.Awake();
+			base.Start();
 
             hitBox = GetComponent<ActionHitBox>();
+
+			hitBox.OnDetectedCollider2D += HandleDetectCollider2D;
 		}
 
-		protected override void OnEnable()
+		protected override void OnDestroy()
 		{
-			base.OnEnable();
-
-            hitBox.OnDetectedCollider2D += HandleDetectCollider2D;
-		}
-
-		protected override void OnDisable()
-		{
-			base.OnDisable();
+			base.OnDestroy();
 
 			hitBox.OnDetectedCollider2D -= HandleDetectCollider2D;
 		}

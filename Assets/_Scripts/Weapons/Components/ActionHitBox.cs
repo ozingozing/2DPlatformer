@@ -22,6 +22,7 @@ namespace Ozing.Weapons.Components
 			base.Start();
 
 			movement = new CoreComp<CoreSystem.Movement>(Core);
+			eventHandler.OnAttackAction += HandleAttackAction;
 		}
 
 		private void HandleAttackAction()
@@ -37,15 +38,10 @@ namespace Ozing.Weapons.Components
 			OnDetectedCollider2D?.Invoke(detected);
 		}
 
-		protected override void OnEnable()
-		{
-			base.OnEnable();
-			eventHandler.OnAttackAction += HandleAttackAction;
-		}
 
-		protected override void OnDisable()
+		protected override void OnDestroy()
 		{
-			base.OnDisable();
+			base.OnDestroy();
 			eventHandler.OnAttackAction -= HandleAttackAction;
 		}
 

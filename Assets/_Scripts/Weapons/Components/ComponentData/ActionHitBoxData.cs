@@ -9,5 +9,9 @@ namespace Ozing.Weapons.Components.ComponentData
 	{
 		[field : SerializeField] public LayerMask DetectableLayers {  get; private set; }
 		
+		public ActionHitBoxData()
+		{
+			ComponentDependency = typeof(ActionHitBox);
+		}
 	}
 }

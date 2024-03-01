@@ -5,8 +5,11 @@ using UnityEngine;
 
 namespace Ozing.Weapons.Components.ComponentData
 {
-    public class DamageData : ComponentData<AttackDamage>
-    {
-        
-    }
+	public class DamageData : ComponentData<AttackDamage>
+	{
+		public DamageData()
+		{
+			ComponentDependency = typeof(Damage);
+		}
+	}
 }

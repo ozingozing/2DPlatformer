@@ -10,6 +10,8 @@ namespace Ozing.Weapons.Components.ComponentData
     {
         [SerializeField, HideInInspector] private string name;
 
+        public Type ComponentDependency { get; protected set; }
+
         public ComponentData()
         {
             SetComponentName();

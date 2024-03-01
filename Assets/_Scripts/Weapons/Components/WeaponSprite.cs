@@ -41,32 +41,23 @@ namespace Ozing.Weapons.Components
 			}
 		}
 
-		protected override void Awake()
+		protected override void Start()
 		{
-			base.Awake();
+			base.Start();
 
-			baseSpriteRender = transform.Find("Base").GetComponent<SpriteRenderer>();
-			weaponSpriteRender = transform.Find("WeaponSprite").GetComponent<SpriteRenderer>();
+			baseSpriteRender = weapon.BaseGO.GetComponent<SpriteRenderer>();
+			weaponSpriteRender = weapon.WeaponSpriteGO.GetComponent<SpriteRenderer>();
 
+			data = weapon.Data.GetData<WeaponSpriteData>();
 
-			// TODO: Fix this when we create weapon data
-			//baseSpriteRender = weapon.BaseGO.GetComponent<SpriteRenderer>();
-			//weaponSpriteRender = weapon.WeaponSpriteGO.GetComponent<SpriteRenderer>();
-		}
-
-		//유니티에도 이렇게 event함수를 사용하도록 권장하는 걸 보니깐 사용할 때 연결하고 사용이 끝나면 끊어버리네
-		protected override void OnEnable()
-		{
-			base.OnEnable();
 			baseSpriteRender.RegisterSpriteChangeCallback(HandleBaseSpriteChange);
-			weapon.OnEnter += HandleEnter;
 		}
+		
 
-		protected override void OnDisable()
+		protected override void OnDestroy()
 		{
-			base.OnDisable();
+			base.OnDestroy();
 			baseSpriteRender.UnregisterSpriteChangeCallback(HandleBaseSpriteChange);
-			weapon.OnEnter -= HandleEnter;
 		}
 	}
 }
