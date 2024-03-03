@@ -48,8 +48,6 @@ namespace Ozing.Weapons.Components
 			baseSpriteRender = weapon.BaseGO.GetComponent<SpriteRenderer>();
 			weaponSpriteRender = weapon.WeaponSpriteGO.GetComponent<SpriteRenderer>();
 
-			data = weapon.Data.GetData<WeaponSpriteData>();
-
 			baseSpriteRender.RegisterSpriteChangeCallback(HandleBaseSpriteChange);
 		}
 		

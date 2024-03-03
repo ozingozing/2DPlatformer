@@ -3,6 +3,9 @@ using System.Collections;
 using UnityEngine;
 using Ozing.Utilities;
 using Ozing.CoreSystem;
+using Ozing.Weapons.Components.ComponentData;
+using Ozing.Weapons.Components.ComponentData.AttackData;
+using Ozing.Weapons.Components;
 
 namespace Ozing.Weapons
 {

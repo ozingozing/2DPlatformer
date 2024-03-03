@@ -18,7 +18,7 @@ namespace Ozing.Weapons
             return ComponentData.OfType<T>().FirstOrDefault();
         }
 
-        public List<Type> GetAllDenedencies()
+        public List<Type> GetAllDependencies()
         {
             return ComponentData.Select(component => component.ComponentDependency).ToList();
         }

@@ -18,9 +18,24 @@ MonoBehaviour:
   - rid: 2681878726952091692
   - rid: 2681878755329441802
   - rid: 2681878857550135296
+  - rid: 874580204989186048
   references:
     version: 2
     RefIds:
+    - rid: 874580204989186048
+      type: {class: KnockBackData, ns: Ozing.Weapons.Components.ComponentData, asm: Assembly-CSharp}
+      data:
+        name: KnockBackData
+        attackData:
+        - name: Attack 1
+          <Angle>k__BackingField: {x: 1, y: 1}
+          <Strength>k__BackingField: 10
+        - name: Attack 2
+          <Angle>k__BackingField: {x: 1, y: 1}
+          <Strength>k__BackingField: 10
+        - name: Attack 3
+          <Angle>k__BackingField: {x: 1, y: 3}
+          <Strength>k__BackingField: 20
     - rid: 2681878726952091691
       type: {class: WeaponSpriteData, ns: Ozing.Weapons.Components.ComponentData, asm: Assembly-CSharp}
       data:
@@ -67,7 +82,7 @@ MonoBehaviour:
         name: ActionHitBoxData
         attackData:
         - name: Attack 1
-          Debug: 0
+          Debug: 1
           <HitBox>k__BackingField:
             serializedVersion: 2
             x: -0
@@ -75,7 +90,7 @@ MonoBehaviour:
             width: 2
             height: 1.71
         - name: Attack 2
-          Debug: 0
+          Debug: 1
           <HitBox>k__BackingField:
             serializedVersion: 2
             x: 0
@@ -83,13 +98,13 @@ MonoBehaviour:
             width: 2
             height: 1.71
         - name: Attack 3
-          Debug: 0
+          Debug: 1
           <HitBox>k__BackingField:
             serializedVersion: 2
             x: 0
             y: -0.96
             width: 2
-            height: 1.71
+            height: 2.37
         <DetectableLayers>k__BackingField:
           serializedVersion: 2
           m_Bits: 256

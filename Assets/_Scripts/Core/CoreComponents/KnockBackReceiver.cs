@@ -12,8 +12,8 @@ namespace Ozing.CoreSystem
 		private bool isKnockBackActive;
 		private float knockBackStartTime;
 
-		private CoreComp<Movement> movement;
-		private CoreComp<CollisionSenses> collisionSenses;
+		private Movement movement;
+		private CollisionSenses collisionSenses;
 
 		public override void LogicUpdate()
 		{
@@ -22,8 +22,8 @@ namespace Ozing.CoreSystem
 
 		public void KnockBack(Vector2 angle, float strength, int direction)
 		{
-			movement.Comp?.SetVelocity(strength, angle, direction);
-			movement.Comp.canSetVelocity = false;
+			movement?.SetVelocity(strength, angle, direction);
+			movement.canSetVelocity = false;
 			isKnockBackActive = true;
 			knockBackStartTime = Time.time;
 		}
@@ -31,12 +31,12 @@ namespace Ozing.CoreSystem
 		private void CheckKnockBack()
 		{
 			if (isKnockBackActive
-				&& movement.Comp?.CurrentVelocity.y <= 0.01f
-				&& collisionSenses.Comp.Ground
+				&& movement?.CurrentVelocity.y <= 0.01f
+				&& collisionSenses.Ground
 				|| Time.time >= knockBackStartTime + maxKnockBackTime)
 			{
 				isKnockBackActive = false;
-				movement.Comp.canSetVelocity = true;
+				movement.canSetVelocity = true;
 			}
 		}
 
@@ -44,8 +44,8 @@ namespace Ozing.CoreSystem
 		{
 			base.Awake();
 
-			movement = new CoreComp<Movement>(core);
-			collisionSenses = new CoreComp<CollisionSenses>(core);
+			movement = core.GetCoreComponent<Movement>();
+			collisionSenses = core.GetCoreComponent<CollisionSenses>();
 		}
 	}
 }

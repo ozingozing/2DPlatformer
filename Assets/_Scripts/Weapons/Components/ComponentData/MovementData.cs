@@ -8,7 +8,7 @@ namespace Ozing.Weapons.Components.ComponentData
 {
 	public class MovementData : ComponentData<AttackMovement>
 	{
-		public MovementData()
+		protected override void SetComponentDependency()
 		{
 			ComponentDependency = typeof(Movement);
 		}

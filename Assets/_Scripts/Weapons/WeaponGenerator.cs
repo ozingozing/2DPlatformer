@@ -39,7 +39,7 @@ namespace Ozing.Weapons
 
             componentAlreadyOnWeapon = GetComponents<WeaponComponent>().ToList();
 
-            componentDependencies = data.GetAllDenedencies();
+            componentDependencies = data.GetAllDependencies();
 
             foreach (var dependency in componentDependencies)
             {

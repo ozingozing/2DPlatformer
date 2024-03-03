@@ -11,7 +11,8 @@ namespace Ozing.Weapons.Components
 	{
 		public event Action<Collider2D[]> OnDetectedCollider2D;
 
-		private CoreComp<CoreSystem.Movement> movement;
+		private CoreSystem.Movement movement;
+		private CoreSystem.Movement Movement => movement ? movement : Core.GetCoreComponent(ref movement);
 
 		private Vector2 offset;
 
@@ -21,14 +22,13 @@ namespace Ozing.Weapons.Components
 		{
 			base.Start();
 
-			movement = new CoreComp<CoreSystem.Movement>(Core);
 			eventHandler.OnAttackAction += HandleAttackAction;
 		}
 
 		private void HandleAttackAction()
 		{
 			offset.Set(
-					transform.position.x + (currentAttackData.HitBox.center.x * movement.Comp.FacingDirection),
+					transform.position.x + (currentAttackData.HitBox.center.x * Movement.FacingDirection),
 					transform.position.y + currentAttackData.HitBox.center.y
 				);
 			detected = Physics2D.OverlapBoxAll(offset, currentAttackData.HitBox.size, 0f, data.DetectableLayers);
@@ -53,7 +53,7 @@ namespace Ozing.Weapons.Components
 			{
 				if (!item.Debug) continue;
 				Gizmos.DrawWireCube(transform.position +
-					new Vector3(item.HitBox.center.x * movement.Comp.FacingDirection, item.HitBox.center.y),
+					new Vector3(item.HitBox.center.x * Movement.FacingDirection, item.HitBox.center.y),
 					item.HitBox.size);
 			}
 		}
