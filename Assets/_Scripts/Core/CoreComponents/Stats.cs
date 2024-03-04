@@ -2,40 +2,30 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Ozing.CoreSystem.StatsSystem;
 
 namespace Ozing.CoreSystem
 {
 	public class Stats : CoreComponent
 	{
-		public event Action OnHealthZero;
+		[field : SerializeField] public Stat Health { get; private set; }
+		[field : SerializeField] public Stat Poise { get; private set; }
 
-		[SerializeField] private float maxHealth;
-		private float currenHealth;
+		[SerializeField] private float poiseRecoverRate;
 
 		protected override void Awake()
 		{
 			base.Awake();
 
-			currenHealth = maxHealth;
+			Health.Init();
+			Poise.Init();
 		}
 
-		public void DecreaseHealth(float amount)
+		private void Update()
 		{
-			currenHealth -= amount;
+			if (Poise.CurrentValue.Equals(Poise.MaxValue)) return;
 
-			if (currenHealth <= 0)
-			{
-				currenHealth = 0;
-				//?는 null Check해주는거
-				OnHealthZero?.Invoke();
-
-				Debug.Log("Health is zeor!");
-			}
-		}
-
-		public void IncreaseHealth(float amount)
-		{
-			currenHealth = Mathf.Clamp(currenHealth + amount, 0, maxHealth);
+			Poise.Increase(poiseRecoverRate * Time.deltaTime);
 		}
 	}
 }

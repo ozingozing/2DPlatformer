@@ -11,6 +11,9 @@ public class Entity : MonoBehaviour
 	{ get => movement ?? Core.GetCoreComponent(ref movement); }
 	private Movement movement;
 
+    protected Stats Stats => stats ? stats : Core.GetCoreComponent(ref stats);
+	private Stats stats;
+
 	public FiniteStateMachine stateMachine;
 
     public D_Entity entityData;
@@ -38,6 +41,7 @@ public class Entity : MonoBehaviour
 
     protected bool isStunned;
     protected bool isDead;
+
 
 
     public virtual void Awake()

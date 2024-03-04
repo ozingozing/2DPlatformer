@@ -11,6 +11,19 @@ namespace Ozing.CoreSystem
 		{ get => movement ?? core.GetCoreComponent(ref movement); }
 		private Movement movement;
 
+
+
+		[SerializeField] private Transform groundCheck;
+		[SerializeField] private Transform wallCheck;
+		[SerializeField] private Transform ledgeCheckHorizontal;
+		[SerializeField] private Transform ledgeCheckVertical;
+		[SerializeField] private Transform ceilingCheck;
+
+		[SerializeField] private float groundCheckRadius;
+		[SerializeField] private float wallCheckDistance;
+
+		[SerializeField] private LayerMask whatIsGround;
+
 		#region Check Transforms
 
 		public Transform GrounCheck
@@ -55,17 +68,6 @@ namespace Ozing.CoreSystem
 			private set => wallCheckDistance = value;
 		}
 
-
-		[SerializeField] private Transform groundCheck;
-		[SerializeField] private Transform wallCheck;
-		[SerializeField] private Transform ledgeCheckHorizontal;
-		[SerializeField] private Transform ledgeCheckVertical;
-		[SerializeField] private Transform ceilingCheck;
-
-		[SerializeField] private float groundCheckRadius;
-		[SerializeField] private float wallCheckDistance;
-
-		[SerializeField] private LayerMask whatIsGround;
 		#endregion
 
 		#region Check Functions

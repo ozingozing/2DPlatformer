@@ -8,22 +8,24 @@ namespace Ozing.CoreSystem
 	{
 		[SerializeField] private GameObject damageParticles;
 
+		private Stats Stats => stats ? stats : core.GetCoreComponent(ref stats);
 		private Stats stats;
+		private ParticleManager ParticleManager => particleManage ? particleManage : core.GetCoreComponent(ref particleManage);
 		private ParticleManager particleManage;
 		
 		public void Damage(float amount)
 		{
 			Debug.Log(core.transform.parent.name + " Damaged!");
-			stats?.DecreaseHealth(amount);
-			particleManage?.StartParticlesWithRandomRotation(damageParticles);
+			Stats.Health.Decrease(amount);
+			ParticleManager?.StartParticlesWithRandomRotation(damageParticles);
 		}
 
 		protected override void Awake()
 		{
 			base.Awake();
 
-			stats = core.GetCoreComponent<Stats>();
-			particleManage = core.GetCoreComponent<ParticleManager>();
+			//stats = core.GetCoreComponent<Stats>();
+			//particleManage = core.GetCoreComponent<ParticleManager>();
 		}
 
 	}

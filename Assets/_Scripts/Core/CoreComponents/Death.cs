@@ -25,12 +25,12 @@ namespace Ozing.CoreSystem
 
 		private void OnEnable()
 		{
-			Stats.OnHealthZero += Die;
+			Stats.Health.OnCurrenValueZero += Die;
 		}
 
 		private void OnDisable()
 		{
-			Stats.OnHealthZero -= Die;
+			Stats.Health.OnCurrenValueZero -= Die;
 		}
 	}
 }

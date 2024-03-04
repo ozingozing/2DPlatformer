@@ -1425,7 +1425,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0e127377e80904698085377028af37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  <Health>k__BackingField:
+    <MaxValue>k__BackingField: 50
+  <Poise>k__BackingField:
+    <MaxValue>k__BackingField: 25
+  poiseRecoverRate: 5
 --- !u!1 &485323327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,7 +1829,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0e127377e80904698085377028af37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  <Health>k__BackingField:
+    <MaxValue>k__BackingField: 100
+  <Poise>k__BackingField:
+    <MaxValue>k__BackingField: 100
+  poiseRecoverRate: 25
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,7 +2457,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0e127377e80904698085377028af37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  <Health>k__BackingField:
+    <MaxValue>k__BackingField: 0
+  <Poise>k__BackingField:
+    <MaxValue>k__BackingField: 0
+  poiseRecoverRate: 0
 --- !u!1 &948609929
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,6 +3453,7 @@ GameObject:
   - component: {fileID: 1355580169}
   - component: {fileID: 1355580168}
   - component: {fileID: 1355580170}
+  - component: {fileID: 1355580171}
   m_Layer: 8
   m_Name: Combat
   m_TagString: Untagged
@@ -3534,6 +3547,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageParticles: {fileID: 4236773547257929120, guid: 366ec89d3b0a17a4bb054b7db013916d, type: 3}
+--- !u!114 &1355580171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355580166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1dc9ead13a78f46925459c27a199bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1356252607
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,6 +3932,7 @@ GameObject:
   - component: {fileID: 1665954795}
   - component: {fileID: 1665954794}
   - component: {fileID: 1665954796}
+  - component: {fileID: 1665954797}
   m_Layer: 8
   m_Name: Combat
   m_TagString: Untagged
@@ -4000,6 +4026,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageParticles: {fileID: 4236773547257929120, guid: 366ec89d3b0a17a4bb054b7db013916d, type: 3}
+--- !u!114 &1665954797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665954791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1dc9ead13a78f46925459c27a199bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1808315918
 GameObject:
   m_ObjectHideFlags: 3
