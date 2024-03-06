@@ -251,7 +251,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0069708824, y: -0.17427301}
+  m_Offset: {x: 0, y: -0.16}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -262,7 +262,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.651454, y: 1.6273832}
+  m_Size: {x: 0.6, y: 1.6}
   m_EdgeRadius: 0
 --- !u!114 &266039098
 MonoBehaviour:
@@ -2458,10 +2458,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField:
-    <MaxValue>k__BackingField: 0
+    <MaxValue>k__BackingField: 100
   <Poise>k__BackingField:
-    <MaxValue>k__BackingField: 0
-  poiseRecoverRate: 0
+    <MaxValue>k__BackingField: 15
+  poiseRecoverRate: 5
 --- !u!1 &948609929
 GameObject:
   m_ObjectHideFlags: 0
@@ -69208,7 +69208,11 @@ PrefabInstance:
     - target: {fileID: 3421378365157889413, guid: d6c025d3e081855498dbe0e84b7826a5, type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: a70d7e2c91ac34c44a6cf1f8e657a043, type: 2}
+      objectReference: {fileID: 11400000, guid: eab5bde567db8894da9d717f6542cdae, type: 2}
+    - target: {fileID: 3725340728645984033, guid: d6c025d3e081855498dbe0e84b7826a5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 772f25c8b63f69548b3ba9c1da4d41c6, type: 2}
     - target: {fileID: 5792271843837995518, guid: d6c025d3e081855498dbe0e84b7826a5, type: 3}
       propertyPath: weaponSprites.Array.size
       value: 3

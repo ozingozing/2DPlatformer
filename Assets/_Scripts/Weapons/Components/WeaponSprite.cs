@@ -2,6 +2,7 @@
 using Ozing.Weapons.Components.ComponentData.AttackData;
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace Ozing.Weapons.Components
@@ -14,11 +15,18 @@ namespace Ozing.Weapons.Components
 
 		private int currentWeaponSpriteIndex;
 
+		private Sprite[] currentPhaseSprites;
 
 		protected override void HandleEnter()
 		{
 			base.HandleEnter();
 			currentWeaponSpriteIndex = 0;
+		}
+
+		private void HandleEnterAttackPhase(AttackPhases phase)
+		{
+			currentWeaponSpriteIndex = 0;
+			currentPhaseSprites = currentAttackData.PhaseSprites.FirstOrDefault(data => data.Phase == phase).Sprites;
 		}
 
 		private void HandleBaseSpriteChange(SpriteRenderer sr)
@@ -28,17 +36,14 @@ namespace Ozing.Weapons.Components
 				weaponSpriteRender.sprite = null;
 				return;
 			}
-			if(currentWeaponSpriteIndex < currentAttackData.Sprites.Length)
-			{
-				weaponSpriteRender.sprite = currentAttackData.Sprites[currentWeaponSpriteIndex];
-
-				currentWeaponSpriteIndex++;
-			}
-			else
+			if(currentWeaponSpriteIndex >= currentPhaseSprites.Length)
 			{
 				Debug.LogWarning($"{weapon.name} weapon sprites length mismatch");
 				return;
 			}
+			weaponSpriteRender.sprite = currentPhaseSprites[currentWeaponSpriteIndex];
+
+			currentWeaponSpriteIndex++;
 		}
 
 		protected override void Start()
@@ -49,6 +54,7 @@ namespace Ozing.Weapons.Components
 			weaponSpriteRender = weapon.WeaponSpriteGO.GetComponent<SpriteRenderer>();
 
 			baseSpriteRender.RegisterSpriteChangeCallback(HandleBaseSpriteChange);
+			eventHandler.OnEnterAttackPhase += HandleEnterAttackPhase;
 		}
 		
 
@@ -56,6 +62,7 @@ namespace Ozing.Weapons.Components
 		{
 			base.OnDestroy();
 			baseSpriteRender.UnregisterSpriteChangeCallback(HandleBaseSpriteChange);
+			eventHandler.OnEnterAttackPhase -= HandleEnterAttackPhase;
 		}
 	}
 }

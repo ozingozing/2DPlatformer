@@ -11,6 +11,7 @@ namespace Ozing.Weapons
 {
 	public class Weapon : MonoBehaviour
 	{
+		public event Action<bool> OnCurrentInputChange;
 		[SerializeField] private float attackCounterResetCooldown;
 
 		[field: SerializeField] public WeaponDataSO Data { get; private set; }
@@ -25,12 +26,26 @@ namespace Ozing.Weapons
 		public event Action OnEnter;
 		public event Action OnExit;
 
-		private Animator anim;
+		
 		public GameObject BaseGO { get; private set; }
 		public GameObject WeaponSpriteGO { get; private set; }
 		public Core Core { get; private set; }
 		public AnimationEventHandler EventHandler { get; private set; }
+		public bool CurrentInput
+		{
+			get => currentInput;
+			set
+			{
+				if(currentInput != value)
+				{
+					currentInput = value;
+					OnCurrentInputChange?.Invoke(currentInput);
+				}
+			}
+		}
+		private bool currentInput;
 
+		private Animator anim;
 		private Timer attackCounterResetTimer;
 
 		public void Enter()
