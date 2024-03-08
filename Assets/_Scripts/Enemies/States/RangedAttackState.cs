@@ -1,3 +1,4 @@
+using Ozing.Projectile;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,6 +49,7 @@ public class RangedAttackState : AttackState
 	{
 		base.TriggerAttack();
 
+		
 		projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, attackPosition.rotation);
 		projectileScript = projectile.GetComponent<Projectile>();
 		projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance,

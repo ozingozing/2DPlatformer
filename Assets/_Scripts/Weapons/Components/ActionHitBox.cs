@@ -22,7 +22,7 @@ namespace Ozing.Weapons.Components
 		{
 			base.Start();
 
-			eventHandler.OnAttackAction += HandleAttackAction;
+			AnimationEventHandler.OnAttackAction += HandleAttackAction;
 		}
 
 		private void HandleAttackAction()
@@ -42,7 +42,7 @@ namespace Ozing.Weapons.Components
 		protected override void OnDestroy()
 		{
 			base.OnDestroy();
-			eventHandler.OnAttackAction -= HandleAttackAction;
+			AnimationEventHandler.OnAttackAction -= HandleAttackAction;
 		}
 
 		private void OnDrawGizmos()

@@ -30,16 +30,16 @@ namespace Ozing.Weapons.Components
 		{
 			base.Start();
 
-            eventHandler.OnStartMovement += HandleStartMovement;
-            eventHandler.OnStopMovement += HandleStopMovement;
+            AnimationEventHandler.OnStartMovement += HandleStartMovement;
+            AnimationEventHandler.OnStopMovement += HandleStopMovement;
 		}
 
 		protected override void OnDestroy()
 		{
 			base.OnDestroy();
 
-			eventHandler.OnStartMovement -= HandleStartMovement;
-			eventHandler.OnStopMovement -= HandleStopMovement;
+			AnimationEventHandler.OnStartMovement -= HandleStartMovement;
+			AnimationEventHandler.OnStopMovement -= HandleStopMovement;
 		}
 	}
 }

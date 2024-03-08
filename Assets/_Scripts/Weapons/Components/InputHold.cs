@@ -53,7 +53,7 @@ namespace Ozing.Weapons.Components
 			anim = GetComponentInChildren<Animator>();
 
 			weapon.OnCurrentInputChange += HandleCurrentInputChange;
-			eventHandler.OnMinHoldPassed += HandleMinHoldPassed;
+			AnimationEventHandler.OnMinHoldPassed += HandleMinHoldPassed;
 		}
 
 		protected override void OnDestroy()
@@ -61,7 +61,7 @@ namespace Ozing.Weapons.Components
 			base.OnDestroy();
 
 			weapon.OnCurrentInputChange -= HandleCurrentInputChange;
-			eventHandler.OnMinHoldPassed -= HandleMinHoldPassed;
+			AnimationEventHandler.OnMinHoldPassed -= HandleMinHoldPassed;
 		}
 	}
 }

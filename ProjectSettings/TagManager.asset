@@ -58,6 +58,9 @@ TagManager:
   - name: Player
     uniqueID: 3920390535
     locked: 0
+  - name: ActiveProjectile
+    uniqueID: 3933039919
+    locked: 0
   - name: ForefroundDecoration
     uniqueID: 2819887473
     locked: 0

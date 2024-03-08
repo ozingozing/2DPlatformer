@@ -12,7 +12,7 @@ namespace Ozing.Weapons.Components
 	{
 		protected Weapon weapon;
 
-		protected AnimationEventHandler eventHandler;// => weapon.EventHandler;
+		protected AnimationEventHandler AnimationEventHandler => weapon.EventHandler;
 		protected Core Core => weapon.Core;
 
 		protected bool isAttackActive;
@@ -25,7 +25,6 @@ namespace Ozing.Weapons.Components
 		protected virtual void Awake()
 		{
 			weapon = GetComponent<Weapon>();
-			eventHandler = GetComponentInChildren<AnimationEventHandler>();
 		}
 
 		protected virtual void Start()

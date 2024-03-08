@@ -54,7 +54,7 @@ namespace Ozing.Weapons.Components
 			weaponSpriteRender = weapon.WeaponSpriteGO.GetComponent<SpriteRenderer>();
 
 			baseSpriteRender.RegisterSpriteChangeCallback(HandleBaseSpriteChange);
-			eventHandler.OnEnterAttackPhase += HandleEnterAttackPhase;
+			AnimationEventHandler.OnEnterAttackPhase += HandleEnterAttackPhase;
 		}
 		
 
@@ -62,7 +62,7 @@ namespace Ozing.Weapons.Components
 		{
 			base.OnDestroy();
 			baseSpriteRender.UnregisterSpriteChangeCallback(HandleBaseSpriteChange);
-			eventHandler.OnEnterAttackPhase -= HandleEnterAttackPhase;
+			AnimationEventHandler.OnEnterAttackPhase -= HandleEnterAttackPhase;
 		}
 	}
 }

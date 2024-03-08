@@ -29,6 +29,7 @@ namespace Ozing.Weapons.Components.ComponentData
         //get/private set으로 설정하면 함수에 레퍼런스형식 파라미터로 못 넘김
         //그래서 정 넘기고 싶으면 get/set 쪽에서 넘길 변수에 값을 넣어주고 넘기면 됨
         [SerializeField] private T[] attackData;
+        public T[] GetAllAttackData() => attackData;
         public T[] AttackData { get => attackData; private set => attackData = value; }
 
 

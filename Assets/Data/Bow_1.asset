@@ -16,6 +16,8 @@ MonoBehaviour:
   <NumberOfAttacks>k__BackingField: 1
   ComponentData:
   - rid: 874580261309775873
+  - rid: 874580280422170625
+  - rid: 874580328926150656
   references:
     version: 2
     RefIds:
@@ -39,3 +41,26 @@ MonoBehaviour:
             - {fileID: 1008453939145656331, guid: 034eb1589e77a0b4cb24cb8f9769c45a, type: 3}
             - {fileID: 1121910671679707029, guid: 034eb1589e77a0b4cb24cb8f9769c45a, type: 3}
             - {fileID: -5727901431455522701, guid: 034eb1589e77a0b4cb24cb8f9769c45a, type: 3}
+    - rid: 874580280422170625
+      type: {class: ProjectileSpawnerData, ns: Ozing.Weapons.Components.ComponentData, asm: Assembly-CSharp}
+      data:
+        name: ProjectileSpawnerData
+        attackData:
+        - name: Attack 1
+          <SpawnInfos>k__BackingField:
+          - <Offset>k__BackingField: {x: 1.24, y: 0.2}
+            <Direction>k__BackingField: {x: 1, y: 0}
+            <ProjectilePrefab>k__BackingField: {fileID: 5096055762995731855, guid: aa0c25bdfc0530c4d96ebdd49f3d8a8d, type: 3}
+            <DamageData>k__BackingField:
+              <Amount>k__BackingField: 15
+            <KnockBackData>k__BackingField:
+              Strength: 10
+              Angle: {x: 1, y: 1}
+            <PoiseDamageData>k__BackingField:
+              <Amount>k__BackingField: 5
+            <SpriteData>k__BackingField:
+              <Sprite>k__BackingField: {fileID: 469599486, guid: cbcf3bd84a6c0724dbbb289ce667cbc3, type: 3}
+    - rid: 874580328926150656
+      type: {class: InputHoldData, ns: Ozing.Weapons.Components.ComponentData, asm: Assembly-CSharp}
+      data:
+        name: InputHoldData
