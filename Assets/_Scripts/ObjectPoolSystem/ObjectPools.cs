@@ -16,6 +16,7 @@ namespace Ozing.ObjectPoolSystem
 			}
 
 			return (ObjectPool<T>)pools[prefab.name];
+
 		}
 
 		public T GetObject<T>(T prefab, int startCount = 1) where T : Component

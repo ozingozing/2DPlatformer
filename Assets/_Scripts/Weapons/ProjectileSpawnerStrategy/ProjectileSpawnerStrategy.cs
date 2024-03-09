@@ -13,7 +13,7 @@ namespace Ozing.Weapons.ProjectileSpawnerStrategy
 		private Vector2 spawnDir;
 		private ProjectileSystem.Projectile currentProjectile;
 
-		public void ExecuteSpawnStrategy(
+		public virtual void ExecuteSpawnStrategy(
 			ProjectileSpawnInfo projectileSpawnInfo,
 			Vector3 spawnerPos,
 			int facingDirection,

@@ -17,7 +17,7 @@ namespace Ozing.ProjectileSystem.Components
 
 		protected virtual void ResetProjectile()
 		{
-
+			
 		}
 
 		protected virtual void HandleReceiveDataPackage(ProjectileDataPackage dataPackage)

@@ -1,21 +1,22 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Ozing.ProjectileSystem
 {
 	public class OnDisableNotifier : MonoBehaviour
 	{
+		public event Action OnDisableEvent;
 
-		// Use this for initialization
-		void Start()
+		private void OnDisable()
 		{
-
+			OnDisableEvent?.Invoke();
 		}
 
-		// Update is called once per frame
-		void Update()
+		[ContextMenu("Test")]
+		private void Test()
 		{
-
+			gameObject.SetActive(false);
 		}
 	}
 }

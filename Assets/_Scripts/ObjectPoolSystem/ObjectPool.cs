@@ -48,7 +48,7 @@ namespace Ozing.ObjectPoolSystem
 
 		public T GetObject()
 		{
-			if(!pool.TryDequeue(out var obj))
+			if (!pool.TryDequeue(out var obj))
 			{
 				obj = InstantiateNewObject();
 				return obj;
@@ -60,6 +60,7 @@ namespace Ozing.ObjectPoolSystem
 
 		public override void ReturnObject(Component component)
 		{
+			Debug.Log($"poolList Length : {pool.Count}");
 			if (component is not T compObj) return;
 
 			compObj.gameObject.SetActive(false);

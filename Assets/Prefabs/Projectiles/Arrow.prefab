@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5096055762995731855}
   - component: {fileID: 4739936246947049831}
   - component: {fileID: 82404130125808053}
+  - component: {fileID: 2122307703139108972}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -101,6 +102,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ApplyContinuously>k__BackingField: 0
   <Speed>k__BackingField: 25
+--- !u!114 &2122307703139108972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2698569654388702350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9610b97b6190b934994469187258e830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnRaycastHit2D:
+    m_PersistentCalls:
+      m_Calls: []
+  <HitBoxRect>k__BackingField:
+    serializedVersion: 2
+    x: -1.05
+    y: -0.125
+    width: 1.35
+    height: 0.25
+  <LayerMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 384
 --- !u!1 &3815225416367002114
 GameObject:
   m_ObjectHideFlags: 0
