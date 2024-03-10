@@ -20,7 +20,7 @@ TagManager:
   - Weapon
   - 
   - 
-  - 
+  - InactiveProjectile
   - 
   - 
   - 
@@ -46,11 +46,14 @@ TagManager:
   - name: Background
     uniqueID: 1074493867
     locked: 0
-  - name: Platforms
-    uniqueID: 1819505617
-    locked: 0
   - name: Decoration
     uniqueID: 3753020395
+    locked: 0
+  - name: InactiveProjectile
+    uniqueID: 1264702755
+    locked: 0
+  - name: Platforms
+    uniqueID: 1819505617
     locked: 0
   - name: Enemy
     uniqueID: 2197935755

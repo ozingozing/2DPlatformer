@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4739936246947049831}
   - component: {fileID: 82404130125808053}
   - component: {fileID: 2122307703139108972}
+  - component: {fileID: -8903077344158733764}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2698569654388702350}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -119,13 +120,48 @@ MonoBehaviour:
       m_Calls: []
   <HitBoxRect>k__BackingField:
     serializedVersion: 2
-    x: -1.05
-    y: -0.125
-    width: 1.35
-    height: 0.25
+    x: -1.03
+    y: -0.09
+    width: 1.4
+    height: 0.3
   <LayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 384
+--- !u!114 &-8903077344158733764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2698569654388702350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba31bc39f24ecf42bd03f5cd7db4dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setStuck:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4739936246947049831}
+        m_TargetAssemblyTypeName: Ozing.ObjectPoolSystem.ObjectPoolItem, Assembly-CSharp
+        m_MethodName: ReturnItem
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  setUnstuck:
+    m_PersistentCalls:
+      m_Calls: []
+  <LayerMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 128
+  <InactiveSortingLayerName>k__BackingField: InactiveProjectile
+  <CheckDistance>k__BackingField: 2
 --- !u!1 &3815225416367002114
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 3815225416367002114}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -197,7 +233,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -361927377
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -780757743, guid: cbcf3bd84a6c0724dbbb289ce667cbc3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
