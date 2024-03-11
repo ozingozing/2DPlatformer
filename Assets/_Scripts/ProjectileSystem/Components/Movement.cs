@@ -10,10 +10,10 @@ namespace Ozing.ProjectileSystem.Components
 		[field : SerializeField] public bool ApplyContinuously { get; private set; }
 		[field: SerializeField] public float Speed { get; private set; }
 		
-		
 		protected override void Init()
 		{
 			base.Init();
+
 
 			SetVelocity();
 		}

@@ -46,7 +46,7 @@ namespace Ozing.Weapons
 		private bool currentInput;
 
 		private Animator anim;
-		private Timer attackCounterResetTimer;
+		private TimerUtility attackCounterResetTimer;
 
 		public void Enter()
 		{
@@ -94,7 +94,7 @@ namespace Ozing.Weapons
 
 			EventHandler = BaseGO.GetComponent<AnimationEventHandler>();
 
-			attackCounterResetTimer = new Timer(attackCounterResetCooldown);
+			attackCounterResetTimer = new TimerUtility(attackCounterResetCooldown);
 		}
 
 		private void ResetAttackCounter() => CurrentAttackCounter = 0;

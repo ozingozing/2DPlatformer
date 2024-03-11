@@ -128,9 +128,9 @@ MonoBehaviour:
           serializedVersion: 2
           m_Bits: 256
     - rid: 2681878857550135296
-      type: {class: DamageData, ns: Ozing.Weapons.Components.ComponentData, asm: Assembly-CSharp}
+      type: {class: DamageOnHitBoxActionData, ns: Ozing.Weapons.Components.ComponentData, asm: Assembly-CSharp}
       data:
-        name: DamageData
+        name: DamageOnHitBoxActionData
         attackData:
         - name: Attack 1
           <Amount>k__BackingField: 5

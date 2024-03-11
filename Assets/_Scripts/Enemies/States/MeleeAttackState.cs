@@ -64,7 +64,7 @@ public class MeleeAttackState : AttackState
 
 			if(damageable != null)
 			{
-				damageable.Damage(stateData.attackDamage);
+				damageable.Damage(new Ozing.Combat.Damage.DamageData(stateData.attackDamage, core.Root));
 			}
 
 			IKnockBackable knockbackable = collider.GetComponent<IKnockBackable>();

@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Ozing.Weapons.Components.ComponentData
 {
-	public class DamageData : ComponentData<AttackDamage>
+	public class DamageOnHitBoxActionData : ComponentData<AttackDamage>
 	{
 		protected override void SetComponentDependency()
 		{
-			ComponentDependency = typeof(Damage);
+			ComponentDependency = typeof(DamageOnHitBoxAction);
 		}
 	}
 }

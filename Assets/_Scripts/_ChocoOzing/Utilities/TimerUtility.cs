@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Ozing.Utilities
 {
-	public class Timer
+	public class TimerUtility
 	{
 		public event Action OnTimerDone;
 
@@ -14,7 +14,7 @@ namespace Ozing.Utilities
 
 		private bool isActive;
 
-		public Timer(float duration)
+		public TimerUtility(float duration)
 		{
 			this.duration = duration;
 		}

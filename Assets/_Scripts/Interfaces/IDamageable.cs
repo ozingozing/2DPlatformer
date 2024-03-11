@@ -1,8 +1,9 @@
+using Ozing.Combat.Damage;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public interface IDamageable
 {
-    void Damage(float amount);
+    void Damage(DamageData data);
 }

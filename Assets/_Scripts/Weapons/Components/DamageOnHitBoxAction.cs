@@ -2,24 +2,19 @@ using Ozing.Weapons.Components.ComponentData;
 using Ozing.Weapons.Components.ComponentData.AttackData;
 using System.Collections;
 using System.Collections.Generic;
+using Ozing.Utilities;
 using UnityEngine;
 
 namespace Ozing.Weapons.Components
 {
-    public class Damage : WeaponComponent<DamageData, AttackDamage>
+    public class DamageOnHitBoxAction : WeaponComponent<DamageOnHitBoxActionData, AttackDamage>
     {
         private ActionHitBox hitBox;
 
 
         private void HandleDetectCollider2D(Collider2D[] colliders)
         {
-            foreach (var item in colliders)
-            {
-                if(item.TryGetComponent(out IDamageable damageable))
-				{
-					damageable.Damage(currentAttackData.Amount);
-				}
-            }
+			CombatDamageUtility.TryDamage(colliders, new Combat.Damage.DamageData(currentAttackData.Amount, Core.Root), out _);
         }
 
 		protected override void Start()

@@ -7,15 +7,13 @@ namespace Ozing.CoreSystem
 {
 	public class Core : MonoBehaviour
 	{
-		private Movement movement;
-		private CollisionSenses collisionSenses;
-		private KnockBackReceiver combat;
-		private Stats stats;
-
 		private readonly List<CoreComponent> CoreComponents = new List<CoreComponent>();
+
+		[field : SerializeField] public GameObject Root { get; private set; }
+
 		private void Awake()
 		{
-
+			Root = Root ? Root : transform.parent.gameObject;
 		}
 
 		private void Start()

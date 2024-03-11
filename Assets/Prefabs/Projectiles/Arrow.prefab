@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 82404130125808053}
   - component: {fileID: 2122307703139108972}
   - component: {fileID: -8903077344158733764}
+  - component: {fileID: 5661006507632349241}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -121,7 +122,7 @@ MonoBehaviour:
   <HitBoxRect>k__BackingField:
     serializedVersion: 2
     x: -1.03
-    y: -0.09
+    y: -0.12
     width: 1.4
     height: 0.3
   <LayerMask>k__BackingField:
@@ -162,6 +163,41 @@ MonoBehaviour:
     m_Bits: 128
   <InactiveSortingLayerName>k__BackingField: InactiveProjectile
   <CheckDistance>k__BackingField: 2
+--- !u!114 &5661006507632349241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2698569654388702350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d38966b8695904b9da230d530a2b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4739936246947049831}
+        m_TargetAssemblyTypeName: Ozing.ObjectPoolSystem.ObjectPoolItem, Assembly-CSharp
+        m_MethodName: ReturnItem
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRaycastHit:
+    m_PersistentCalls:
+      m_Calls: []
+  <LayerMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 256
+  <SetInacativeAfterDamage>k__BackingField: 0
+  <Cooldown>k__BackingField: 3
 --- !u!1 &3815225416367002114
 GameObject:
   m_ObjectHideFlags: 0

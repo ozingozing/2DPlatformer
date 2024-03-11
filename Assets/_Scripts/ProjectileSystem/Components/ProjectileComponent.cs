@@ -41,6 +41,9 @@ namespace Ozing.ProjectileSystem.Components
 		protected virtual void Awake()
 		{
 			projectile = GetComponent<Projectile>();
+			if (projectile == null) { Debug.Log("There is no Projectile this GO!!"); }
+			projectile.AddProjectileComponent(this);
+
 			projectile.OnInit += Init;
 			projectile.OnReset += ResetProjectile;
 			projectile.OnReceiveDataPackage += HandleReceiveDataPackage;
