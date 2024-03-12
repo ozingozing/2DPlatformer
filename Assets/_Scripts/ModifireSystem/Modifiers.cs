@@ -2,9 +2,10 @@
 
 namespace Ozing.ModifireSystem
 {
-	public class Modifiers<TModifierType, TValueType> where TModifierType : Modifier<TValueType>
+	public class Modifiers<TValueType>
 	{
-		private readonly LinkedList<TModifierType> modifierList = new LinkedList<TModifierType>();
+		private readonly List<Modifier<TValueType>> modifierList = new List<Modifier<TValueType>>();
+		//private readonly List<TModifierTypeClass> modifierList = new List<TModifierTypeClass>();
 
 		public TValueType ApplyAllModifiers(TValueType initialValue)
 		{
@@ -18,8 +19,8 @@ namespace Ozing.ModifireSystem
 			return modifiedValue;
 		}
 
-		public void AddModifier(TModifierType modifier) => modifierList.AddLast(modifier);
+		public void AddModifier(Modifier<TValueType> modifier) => modifierList.Add(modifier);
 
-		public void RemoveModifier(TModifierType modifier) => modifierList.Remove(modifier);
+		public void RemoveModifier(Modifier<TValueType> modifier) => modifierList.Remove(modifier);
 	}
 }

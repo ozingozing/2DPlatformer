@@ -1,3 +1,5 @@
+using Ozing.Combat.KnockBack;
+using Ozing.ModifireSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +8,7 @@ namespace Ozing.CoreSystem
 {
 	public class KnockBackReceiver : CoreComponent, IKnockBackable
 	{
+		public Modifiers<KnockBackData> Modifiers { get; } = new();
 
 		[SerializeField] private float maxKnockBackTime = 0.2f;
 
@@ -22,9 +25,11 @@ namespace Ozing.CoreSystem
 			CheckKnockBack();
 		}
 
-		public void KnockBack(Vector2 angle, float strength, int direction)
+		public void KnockBack(KnockBackData data)
 		{
-			Movement?.SetVelocity(strength, angle, direction);
+			data = Modifiers.ApplyAllModifiers(data);
+
+			Movement?.SetVelocity(data.Strength, data.Angle, data.Direction);
 			Movement.canSetVelocity = false;
 			isKnockBackActive = true;
 			knockBackStartTime = Time.time;
@@ -49,5 +54,7 @@ namespace Ozing.CoreSystem
 			//movement = core.GetCoreComponent<Movement>();
 			//collisionSenses = core.GetCoreComponent<CollisionSenses>();
 		}
+
+		
 	}
 }

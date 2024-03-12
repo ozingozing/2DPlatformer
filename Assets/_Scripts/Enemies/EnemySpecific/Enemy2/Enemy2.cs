@@ -1,3 +1,6 @@
+using Ozing.Weapons;
+using Ozing.Weapons.Components.ComponentData.AttackData;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +8,8 @@ using UnityEngine.UIElements;
 
 public class Enemy2 : Entity
 {
-    public E2_MoveState moveState {  get; private set; }
+	[SerializeField] public ProjectileSpawnInfo ArrowData;
+	public E2_MoveState moveState {  get; private set; }
     public E2_IdleState idleState { get; private set; }
 	public E2_PlayerDetectedState playerDetectedState { get; private set; }
 	public E2_MeleeAttackState meleeAttackState { get; private set; }

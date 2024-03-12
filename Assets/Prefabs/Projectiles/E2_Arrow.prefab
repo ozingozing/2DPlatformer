@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5661006507632349241}
   - component: {fileID: 3603128508613241524}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: E2_Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
     height: 0.3
   <LayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 192
 --- !u!114 &-8903077344158733764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
       m_Calls: []
   <LayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 64
   <SetInacativeAfterDamage>k__BackingField: 0
   <Cooldown>k__BackingField: 3
 --- !u!114 &3603128508613241524
@@ -216,7 +216,7 @@ MonoBehaviour:
       m_Calls: []
   <LayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 64
 --- !u!1 &3815225416367002114
 GameObject:
   m_ObjectHideFlags: 0

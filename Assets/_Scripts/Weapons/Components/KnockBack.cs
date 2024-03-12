@@ -19,7 +19,7 @@ namespace Ozing.Weapons.Components
 			{
 				if (item.TryGetComponent(out IKnockBackable knockBackable))
 				{
-					knockBackable.KnockBack(currentAttackData.Angle, currentAttackData.Strength, Movement.FacingDirection);
+					knockBackable.KnockBack(new Combat.KnockBack.KnockBackData(currentAttackData.Angle, currentAttackData.Strength, Movement.FacingDirection, Core.Root));
 				}
 			}
 		}

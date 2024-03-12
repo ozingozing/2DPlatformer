@@ -1,7 +1,9 @@
 using Ozing.CoreSystem;
+using Ozing.Combat.KnockBack;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MeleeAttackState : AttackState
 {
@@ -71,8 +73,9 @@ public class MeleeAttackState : AttackState
 
 			if(knockbackable != null)
 			{
-				knockbackable.KnockBack(stateData.knockbackAngle, stateData.knockbackStrength,
-										Movement.FacingDirection);
+				knockbackable.KnockBack(
+						new KnockBackData(stateData.knockbackAngle, stateData.knockbackStrength, Movement.FacingDirection, core.Root)
+					);
 			}
 		}
 	}

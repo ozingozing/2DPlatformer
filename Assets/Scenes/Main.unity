@@ -362,7 +362,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1475079823
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -1303,7 +1303,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2097031541
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -2109056543, guid: 73d0342874a5bce449fa551cc202c55f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1679,7 +1679,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -374576761
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -967600202, guid: 8cd446affa6f57b489ff9a1684986f1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2032,7 +2032,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -374576761
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 9a19a02880bade445af19f5c6abda178, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2600,6 +2600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583018c0e775e874b9c2e64a53d8cc4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Root>k__BackingField: {fileID: 0}
 --- !u!1 &1031682536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,6 +2682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583018c0e775e874b9c2e64a53d8cc4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Root>k__BackingField: {fileID: 0}
 --- !u!1 &1125304116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2925,6 +2927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583018c0e775e874b9c2e64a53d8cc4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Root>k__BackingField: {fileID: 0}
 --- !u!1 &1233329006
 GameObject:
   m_ObjectHideFlags: 0
@@ -2997,7 +3000,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -541946901
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 1.375, y: 3, z: 0}
@@ -3639,7 +3642,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2097031541
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 752189041, guid: ba3ffc6a0a16da542a1065d80cc4bd79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3747,6 +3750,19 @@ MonoBehaviour:
   ledgeCheck: {fileID: 87691983}
   playerCheck: {fileID: 1303646452}
   groundCheck: {fileID: 916330784}
+  ArrowData:
+    <Offset>k__BackingField: {x: 1.24, y: 0.2}
+    <Direction>k__BackingField: {x: 1, y: 0}
+    <ProjectilePrefab>k__BackingField: {fileID: 5096055762995731855, guid: 1ef4b270a7b183845bfa60b6d3de3e5a, type: 3}
+    <DamageData>k__BackingField:
+      <Amount>k__BackingField: 15
+    <KnockBackData>k__BackingField:
+      Strength: 10
+      Angle: {x: 1, y: 1}
+    <PoiseDamageData>k__BackingField:
+      <Amount>k__BackingField: 5
+    <SpriteData>k__BackingField:
+      <Sprite>k__BackingField: {fileID: 469599486, guid: cbcf3bd84a6c0724dbbb289ce667cbc3, type: 3}
   moveStateData: {fileID: 11400000, guid: 339875fca4f0c89428333423fc4a3504, type: 2}
   idleStateData: {fileID: 11400000, guid: f55383e860a221a47ad49da543135813, type: 2}
   playerDetectedStateData: {fileID: 11400000, guid: 5ecc9290a8240f64fa7af6dba3257a81, type: 2}
@@ -59260,7 +59276,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1819505617
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -69483,7 +69499,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2097031541
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -299015136, guid: ca94849a650ec87479ab577a0fb96644, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

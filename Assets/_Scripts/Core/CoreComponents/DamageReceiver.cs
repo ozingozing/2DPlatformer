@@ -11,7 +11,7 @@ namespace Ozing.CoreSystem
 	{
 		[SerializeField] private GameObject damageParticles;
 
-		public Modifiers<Modifier<DamageData>, DamageData> Modifiers { get; } = new();
+		public Modifiers<DamageData> Modifiers { get; } = new();
 
 		private Stats Stats => stats ? stats : core.GetCoreComponent(ref stats);
 		private Stats stats;

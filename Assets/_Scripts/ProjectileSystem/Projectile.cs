@@ -34,7 +34,7 @@ namespace Ozing.ProjectileSystem
 
 			if (comp) return comp;
 
-			Debug.Log($"{typeof(T)} not found on {transform.parent.name}");
+			Debug.Log($"{typeof(T)} not found on {transform.name}");
 			return null;
 		}
 

@@ -2,10 +2,12 @@ using Ozing.Projectile;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Ozing.Weapons.ProjectileSpawnerStrategy;
+using Ozing.Weapons.Components;
 public class RangedAttackState : AttackState
 {
 	protected D_RangedAttackState stateData;
+
 
 	protected GameObject projectile;
 	protected Projectile projectileScript;
@@ -48,11 +50,5 @@ public class RangedAttackState : AttackState
 	public override void TriggerAttack()
 	{
 		base.TriggerAttack();
-
-		
-		projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, attackPosition.rotation);
-		projectileScript = projectile.GetComponent<Projectile>();
-		projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance,
-										stateData.projectileDamage);
 	}
 }
